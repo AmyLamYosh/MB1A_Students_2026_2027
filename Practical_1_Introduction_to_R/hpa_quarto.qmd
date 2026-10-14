@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+author: "amy"
+---
+Insert a new code chunk
+```{r}
+
+```
+I have measured the diameter of four bacterial colonies. The result were as follows: 2.2mm, 1.6mm, 3.3mm, 4.0mm. I want to calculate the total diamieter of these colonies. 
+total_colony_diameter <- sum(2.2,1.6,3.3, 4.0)
+print(total_colony_diameter)
+```{r}
+total_colony_diameter <- sum(2.2,1.6,3.3, 4.0)
+print(total_colony_diameter)
+```
+the total diamieter of my colonies is 11.1mm
+I am calculating the sum of the number of genes with regionally elevated expression in the forebrain, cerebral cortex, basal ganglia, thamalus, and hypothamalus, regions in human, pig an mouse 
+human 
+```{r}
+total_elevated_human <-sum(180,83,57, 110)
+print(total_elevated_human)
+```
+
+pig
+```{r}
+total_elevated_pig <-sum(109,157,31,45)
+print(total_elevated_pig)
+```
+mouse 
+```{r}
+elevated_regional_mouse <- sum(55,185,60,98)
+print(elevated_regional_mouse)
+```
+
