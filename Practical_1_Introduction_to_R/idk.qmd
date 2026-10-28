@@ -1,0 +1,12 @@
+---
+title: "Practical_1_Introduction_to_R/ukhsa_data_analysis.qmd."
+---
+
+```{r}
+install.packages("fortunes")
+library(fortunes)
+fortune()
+library(tidyverse)
+library(gt)
+```
+

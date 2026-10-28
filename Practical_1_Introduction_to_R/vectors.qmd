@@ -1,0 +1,84 @@
+---
+title: "practical_1_Introduction_to_R/prac1_exercises.qmd"
+author: "amy"
+---
+```{r}
+round(3.14159)
+```
+```{r}
+sqrt(9)
+```
+```{r}
+round(67.67, digits=1)
+```
+```{r}
+print(seq(by=2, from=1, to =10))
+
+```
+```{r}
+```
+
+
+```{r}
+print(rep(4,8))
+```
+```{r}
+my_vairable <- 12 
+print(my_vairable)
+```
+```{r}
+x <- TRUE
+print(class(x))
+```
+
+```{r}
+x <- "hello whatsup"
+print(class(x))
+
+```
+```{r}
+library(tidyverse)
+library(gt)
+```
+```{r}
+my_first_vector <- c(1, 5, 9) 
+print(my_first_vector)
+```
+```{r}
+nice_food <- c("cheese", "beans", "potatoes")
+print(nice_food[1])
+```
+
+```{r}
+all_my_pets <- c("dog","horse","cat","chicken")
+print(all_my_pets[4])
+my_only_bird <- all_my_pets[4]
+```
+
+
+
+```{r}
+print(my_only_bird)
+```
+```{r}
+my_data_frame <- tibble( 
+  cell_ID = c("CX1","CX2"),
+  Treated = c("TRUE", "FALSE"),
+  num_cells_before = c("5415", "8123"),
+  num_cells_after = c("14232", "7543")
+)
+gt(my_data_frame)
+```
+```{r}
+Virus <- read_csv("data/ukhsa-chart-download-rhinovirus.csv")
+ggplot(Virus, aes(
+  x=date,
+  y=metric_value
+)) + 
+  geom_line()
+```
+
+```{r}
+ggplot(Virus)
+```
+
