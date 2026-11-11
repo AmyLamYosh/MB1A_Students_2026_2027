@@ -1,0 +1,79 @@
+---
+title: "Practical_2_Data_Frames_and_Plots/prac2_exercises.qmd"
+---
+
+X= longitude 
+y= latitude
+colours:breeding populations locations 
+spain = orange
+norway = purple 
+sweden = blue 
+britian = pink
+netherlands = red
+western russia =turqoise 
+Ural = green
+siberia = dark green
+shapes: n
+reeding site (circles), Iberian peninsula stopover (filled downward triangles), westernmost location during autumn migration (open triangles), nonbreeding area (squares), and post-Saharan crossing stopover (filled upward triangles).
+russia moscow 36.7
+```{r}
+library(gt)
+library(tidyverse)
+library(maps)
+```
+```{r}
+breeding_site <- read_csv("data/breeding_site_locations.csv") 
+gt(breeding_site)
+```
+```{r}
+colnames(breeding_site)
+```
+shows the different collum
+```{r}
+glimpse(breeding_site)
+```
+
+above is a summary of the data
+functions to see rows 
+```{r}
+print(nrow(breeding_site))
+print(ncol(breeding_site))
+print(dim(breeding_site))
+```
+```{r}
+migratory_yay <- read_csv("data/migratory_connectivity_dataset.csv")
+gt(head(migratory_yay))
+```
+```{r}
+glimpse(migratory_yay)
+```
+tag= chr character 
+birth= dbl integer 
+```{r}
+my_numbers <-c(2, 4, 6, 8)
+sum(my_numbers)
+my_numbers |>sum()
+print(my_numbers |> sum() |> sqrt ())
+my_result <- my_numbers |> sum() |> sqrt () |> round()
+print(my_result)
+```
+practicing pipe opertator 
+```{r}
+input_vec <- c(5, -10, 4, -3)
+my_calc <- input_vec |> mean() |> abs() |> round()
+print(my_calc)
+```
+
+yay it worked 
+```{r}
+y <- 12 
+print(y==7) 
+print(y<15)
+print(y>20)
+print(y<=12)
+```
+```{r}
+breeding_dartmoor <- breeding_site_selected |> filter(site=="Dartmoor")
+gt(breeding_dartmoor)
+```
+
