@@ -1,0 +1,123 @@
+---
+title: "Practical_2_Data_Frames_and_Plots/worked_example.qmd"
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+library(gt)
+library(tidyverse)
+```
+
+
+```{r}
+library(maps)
+```
+```{r}
+breeding_site <- read_csv("data/breeding_site_locations.csv")
+gt(breeding_site)
+```
+```{r}
+glimpse(breeding_site)
+```
+
+```{r}
+print(dim(breeding_site))
+```
+
+```{r}
+migratory
+```
+```{r}
+breeding_site <- read_csv("data/breeding_site_locations.csv") 
+gt(breeding_site)
+```
+```{r}
+colnames(breeding_site)
+```
+shows the different collum
+```{r}
+glimpse(breeding_site)
+```
+
+above is a summary of the data
+functions to see rows 
+```{r}
+print(nrow(breeding_site))
+print(ncol(breeding_site))
+print(dim(breeding_site))
+```
+```{r}
+migratory_yay <- read_csv("data/migratory_connectivity_dataset.csv")
+gt(head(migratory_yay))
+```
+```{r}
+glimpse(migratory_yay)
+```
+tag= chr character 
+birth= dbl integer 
+```{r}
+my_numbers <-c(2, 4, 6, 8)
+sum(my_numbers)
+my_numbers |>sum()
+print(my_numbers |> sum() |> sqrt ())
+my_result <- my_numbers |> sum() |> sqrt () |> round()
+print(my_result)
+```
+practicing pipe opertator 
+```{r}
+input_vec <- c(5, -10, 4, -3)
+my_calc <- input_vec |> mean() |> abs() |> round()
+print(my_calc)
+```
+
+yay it worked 
+```{r}
+breeding_site_selected <- breeding_site |> select(Site, Longitude, Latitude) 
+gt(breeding_site_selected)
+```
+```{r}
+breeding_site_selected <- breeding_site |> select(Site, Longitude, Latitude) |> distinct()
+gt(breeding_site_selected)
+```
+```{r}
+breeding_site_selected <- breeding_site |>
+  select(Site, Longitude, Latitude) |>
+  distinct() |>
+  rename(Breeding_Longitude = Longitude, Breeding_Latitude = Latitude)
+
+gt(breeding_site_selected)
+```
+```{r}
+migratory_yay_selected <- migratory_yay|> select( Site, winterLongitude, winterLatitude, pslon, pslat, iblon, iblat, awestlon, awestlat)|>distinct()|> rename(Winter_Longitude = winterLongitude, Winter_Latitude = winterLatitude, Stopover_Longitude = pslon, Stopover_Latitude = pslat, Iberian_Longitude = iblon, Iberian_Latitude = iblat, Westmost_Longitude = awestlon, Westmost_Latitude = awestlat )
+gt(migratory_yay_selected)
+```
+```{r}
+breeding_dartmoor <- breeding_site_selected |> filter(Site=="Dartmoor")
+gt(breeding_dartmoor)
+```
+```{r}
+bird_breeding_exc <- breeding_site_selected |> filter(Site != "Spain")
+bird_migration_exc <- migratory_yay_selected |> filter(Site !="Spain")
+gt(bird_breeding_exc)
+gt(bird_migration_exc)
+```
+
